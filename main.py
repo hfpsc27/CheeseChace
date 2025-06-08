@@ -12,17 +12,18 @@ foi alterado as variáveis mantiveram-se, só foi mudado o sprite
 #Inicializar o Pygame  
 pygame.init()  
 
+#Configurações da janela  
+LARGURA=800
+ALTURA=600  
+janela=pygame.display.set_mode((LARGURA, ALTURA))  
+pygame.display.set_caption("Cheese Chase")  
+
+#Música de Fundo
+pygame.mixer.music.load("goofyahhmusic.mp3")
+pygame.mixer.music.play(-1)
+
+
 async def main():
-    #Configurações da janela  
-    LARGURA=800
-    ALTURA=600  
-    janela=pygame.display.set_mode((LARGURA, ALTURA))  
-    pygame.display.set_caption("Cheese Chase")  
-
-    #Música de Fundo
-    pygame.mixer.music.load("goofyahhmusic.mp3")
-    pygame.mixer.music.play(-1)
-
     pos_xr,pos_yr=350,500
     pos_x,pos_y=0,0
 
