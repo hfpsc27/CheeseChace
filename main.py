@@ -100,10 +100,6 @@ async def main():
         fundo=pygame.transform.scale(fundo,(600,400)) 
         pos_x,pos_y=100,100
         janela.blit(fundo,(pos_x, pos_y))
-    
-    def comer():
-        comer=pygame.mixer.Sound("comer.mp3")
-        comer.play()
 
     #Posicionamento Queijo:
     pos_xq=random.randint(0,710)
@@ -278,7 +274,6 @@ async def main():
                     pontos+=1
                     # comer=pygame.mixer.Sound("comer.mp3")
                     # comer.play()
-                    # comer()
                     queijovisivel=False
 
             if rectqueijo.colliderect(barreiradown):
