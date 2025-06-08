@@ -23,6 +23,9 @@ async def main():
     pygame.mixer.music.load("goofyahhmusic.mp3")
     pygame.mixer.music.play(-1)
 
+    # comer=pygame.mixer.Sound("comer.mp3")
+    # morte=pygame.mixer.Sound("morte.mp3")
+    #mortechicote=pygame.mixer.Sound("chicote.mp3")
 
     pos_xr,pos_yr=350,500
     pos_x,pos_y=0,0
@@ -97,6 +100,10 @@ async def main():
         fundo=pygame.transform.scale(fundo,(600,400)) 
         pos_x,pos_y=100,100
         janela.blit(fundo,(pos_x, pos_y))
+    
+    def comer():
+        comer=pygame.mixer.Sound("comer.mp3")
+        comer.play()
 
     #Posicionamento Queijo:
     pos_xq=random.randint(0,710)
@@ -269,8 +276,9 @@ async def main():
 
             if rectqueijo.colliderect(rectrato):
                     pontos+=1
-                    comer=pygame.mixer.Sound("comer.mp3")
-                    comer.play()
+                    # comer=pygame.mixer.Sound("comer.mp3")
+                    # comer.play()
+                    # comer()
                     queijovisivel=False
 
             if rectqueijo.colliderect(barreiradown):
@@ -325,8 +333,8 @@ async def main():
                 gato1visivel=True
 
             if rectgato1.colliderect(rectrato):
-                    morte=pygame.mixer.Sound("morte.mp3")
-                    morte.play()
+                    # morte=pygame.mixer.Sound("morte.mp3")
+                    # morte.play()
                     gameoverestado=True
                     jogoIniciado=False
 
@@ -343,8 +351,8 @@ async def main():
                 gato2visivel=True
 
             if rectgato2.colliderect(rectrato):
-                    morte=pygame.mixer.Sound("morte.mp3")
-                    morte.play()
+                    # morte=pygame.mixer.Sound("morte.mp3")
+                    # morte.play()
                     gameoverestado=True
                     jogoIniciado=False
 
@@ -361,8 +369,8 @@ async def main():
                 gato3visivel=True
 
             if rectgato3.colliderect(rectrato):
-                    morte=pygame.mixer.Sound("chicote.mp3")
-                    morte.play()
+                    # morte=pygame.mixer.Sound("chicote.mp3")
+                    # mortechicote.play()
                     gameoverestado=True
                     jogoIniciado=False
 
@@ -380,8 +388,8 @@ async def main():
                 gato4visivel=True
 
             if rectgato4.colliderect(rectrato):
-                    morte=pygame.mixer.Sound("morte.mp3")
-                    morte.play()
+                    # morte=pygame.mixer.Sound("morte.mp3")
+                    # morte.play()
                     gameoverestado=True
                     jogoIniciado=False
 
@@ -399,8 +407,8 @@ async def main():
                 gatogvisivel=True
 
             if rectgatogordo.colliderect(rectrato):
-                    morte=pygame.mixer.Sound("morte.mp3")
-                    morte.play()
+                    # morte=pygame.mixer.Sound("morte.mp3")
+                    # morte.play()
                     gameoverestado=True
                     jogoIniciado=False
 
@@ -421,7 +429,7 @@ async def main():
 
         pygame.display.flip()
 
-        asyncio.sleep(0)
+        await asyncio.sleep(0)
 
 
 asyncio.run(main())
